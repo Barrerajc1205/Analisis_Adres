@@ -70,3 +70,4 @@ write.csv(datos, file = ruta, row.names = FALSE)
 
 # Muestra el contenido del archivo en la consola
 print(head(datos))
+dbDisconnect(con)

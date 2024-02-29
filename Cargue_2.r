@@ -4,6 +4,7 @@
 
 library(stringr)
 library(lubridate)
+library(RSQLite)
 
 # Lee el archivo CSV
 datos <- read.csv("c:\\1\\Adres\\Prestadores.csv", sep = ";")
@@ -69,9 +70,5 @@ ruta <- "c:\\1\\Adres\\Prestadores_ajustado.csv"
 write.csv(datos, file = ruta, row.names = FALSE)
 
 # Muestra las primeras filas del archivo en la consola
-#print(head(datos))
-
-filas_seleccionadas <- datos[datos$codigo_habilitacion == "4700101721", ]
-
-# Mostrar las filas seleccionadas
-print(filas_seleccionadas)
+print(head(datos))
+dbDisconnect(con)
